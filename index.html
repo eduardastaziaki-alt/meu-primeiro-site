@@ -1,262 +1,158 @@
+Aqui está um código HTML simples com 50 tags `<img src="http">` onde você só precisa substituir os links:
+
+```html
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Atividades Infantis - 50 Espaços</title>
+    <title>Galeria de Imagens - Substitua os Links</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
         }
 
         h1 {
             text-align: center;
+            margin-bottom: 30px;
             color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            font-style: italic;
-        }
-
-        .galeria {
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
-            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .card {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            border: 3px solid transparent;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border-color: #667eea;
+            transform: scale(1.02);
         }
 
-        .card-imagem {
+        .card img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
             display: block;
-            background: linear-gradient(45deg, #f3f3f3, #e0e0e0);
         }
 
-        .card-info {
-            padding: 12px;
+        .caption {
+            padding: 10px;
             text-align: center;
+            font-size: 14px;
+            color: #555;
+            background: white;
         }
 
-        .card-info h3 {
-            color: #333;
-            font-size: 1em;
-            margin-bottom: 5px;
+        .caption span {
+            background: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 12px;
         }
 
-        .card-info p {
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
             color: #666;
-            font-size: 0.85em;
+            font-size: 14px;
         }
 
-        /* Estilo para imagens de placeholder */
-        .placeholder-img {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-
-        /* Cores diferentes para os placeholders */
-        .card:nth-child(5n+1) .placeholder-img {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        }
-        .card:nth-child(5n+2) .placeholder-img {
-            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-        }
-        .card:nth-child(5n+3) .placeholder-img {
-            background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
-        }
-        .card:nth-child(5n+4) .placeholder-img {
-            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-        }
-
-        .contador {
-            text-align: center;
-            margin-top: 30px;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50px;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2em;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .contador span {
-            font-size: 1.5em;
-            margin: 0 5px;
-        }
-
-        .mensagem {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-            font-size: 0.9em;
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+            }
+            .card img {
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎨 Galeria de Atividades Infantis 🎨</h1>
-        <div class="subtitle">50 espaços para imagens de atividades divertidas!</div>
-        
-        <div class="galeria" id="galeria">
-            <!-- Os cards serão gerados dinamicamente via JavaScript -->
-        </div>
 
-        <div class="contador">
-            📸 Total de espaços: <span id="totalCards">0</span> imagens
-        </div>
-        <div class="mensagem">
-            ✨ Clique nos cards para ver a atividade em destaque! ✨
-        </div>
-    </div>
+<h1>📸 Galeria de Imagens</h1>
 
-    <script>
-        // Array com exemplos de atividades infantis (para preencher os 50 espaços)
-        const atividades = [
-            { nome: "Pintura com Dedos", categoria: "Artes", imagem: "https://images.unsplash.com/photo-1584697964408-88c235b06c9e?w=200&h=150&fit=crop" },
-            { nome: "Leitura de Histórias", categoria: "Literatura", imagem: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200&h=150&fit=crop" },
-            { nome: "Brincar com Blocos", categoria: "Construção", imagem: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=200&h=150&fit=crop" },
-            { nome: "Dança Divertida", categoria: "Música", imagem: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=150&fit=crop" },
-            { nome: "Jogos de Tabuleiro", categoatividade
+<div class="gallery">
+    <!-- =================================================== -->
+    <!-- COLOQUE SEUS LINKS NOS src="AQUI" ABAIXO -->
+    <!-- Basta substituir os URLs http://exemplo.com/imagem.jpg -->
+    <!-- =================================================== -->
 
-📸ria: "Raciocínio", imagem: "https://static.todamateria.com.br/upload/at/iv/atividadesderecorteecolagemparaeducacaoinfantil1-cke.jpg" },
-            { nome: "Teatro de Fantoches", categoria: "Expressão", imagem: "https://i.pinimg.com/1200x/4a/98/f5/4a98f58033f6690e5970713e88759001.jpg" },
-            { nome: "Experiências Científicas", categoria: "Ciência", imagem: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=200&h=150&fit=crop" },
-            { nome: "Quebra-Cabeças", categoria: "Lógica", imagem: "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=200&h=150&fit=crop" },
-            { nome: "Desenho e Pintura", categoria: "Artes", imagem: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&h=150&fit=crop" },
-            { nome: "Brincadeiras ao Ar Livre", categoria: "Movimento", imagem: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=200&h=150&fit=crop" },
-            { nome: "Massinha de Modelar", categoria: "Artes", imagem: "https://images.unsplash.com/photo-1584697964408-88c235b06c9e?w=200&h=150&fit=crop" },
-            { nome: "Contação de Histórias", categoria: "Literatura", imagem: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200&h=150&fit=crop" },
-            { nome: "Lego e Construção", categoria: "Construção", imagem: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=200&h=150&fit=crop" },
-            { nome: "Música e Ritmo", categoria: "Música", imagem: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=150&fit=crop" },
-            { nome: "Jogos de Memória", categoria: "Raciocínio", imagem: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=200&h=150&fit=crop" },
-            { nome: "Fantoches", categoria: "Expressão", imagem: "https://i.pinimg.com/1200x/0e/a7/24/0ea7248cd23be3b21121d72e5fb7926f.jpg" },
-            { nome: "Pequenos Cientistas", categoria: "Ciência", imagem: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=200&h=150&fit=crop" },
-            { nome: "Encaixes", categoria: "Lógica", imagem: "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=200&h=150&fit=crop" },
-            { nome: "Aquarela", categoria: "Artes", imagem: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&h=150&fit=crop" },
-            { nome: "Parquinho", categoria: "Movimento", imagem: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=200&h=150&fit=crop" }
-        ];
+    <div class="card"><img src="http://exemplo.com/imagem1.jpg" alt="Imagem 1"><div class="caption"><span>01</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem2.jpg" alt="Imagem 2"><div class="caption"><span>02</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem3.jpg" alt="Imagem 3"><div class="caption"><span>03</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem4.jpg" alt="Imagem 4"><div class="caption"><span>04</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem5.jpg" alt="Imagem 5"><div class="caption"><span>05</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem6.jpg" alt="Imagem 6"><div class="caption"><span>06</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem7.jpg" alt="Imagem 7"><div class="caption"><span>07</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem8.jpg" alt="Imagem 8"><div class="caption"><span>08</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem9.jpg" alt="Imagem 9"><div class="caption"><span>09</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem10.jpg" alt="Imagem 10"><div class="caption"><span>10</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem11.jpg" alt="Imagem 11"><div class="caption"><span>11</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem12.jpg" alt="Imagem 12"><div class="caption"><span>12</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem13.jpg" alt="Imagem 13"><div class="caption"><span>13</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem14.jpg" alt="Imagem 14"><div class="caption"><span>14</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem15.jpg" alt="Imagem 15"><div class="caption"><span>15</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem16.jpg" alt="Imagem 16"><div class="caption"><span>16</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem17.jpg" alt="Imagem 17"><div class="caption"><span>17</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem18.jpg" alt="Imagem 18"><div class="caption"><span>18</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem19.jpg" alt="Imagem 19"><div class="caption"><span>19</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem20.jpg" alt="Imagem 20"><div class="caption"><span>20</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem21.jpg" alt="Imagem 21"><div class="caption"><span>21</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem22.jpg" alt="Imagem 22"><div class="caption"><span>22</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem23.jpg" alt="Imagem 23"><div class="caption"><span>23</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem24.jpg" alt="Imagem 24"><div class="caption"><span>24</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem25.jpg" alt="Imagem 25"><div class="caption"><span>25</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem26.jpg" alt="Imagem 26"><div class="caption"><span>26</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem27.jpg" alt="Imagem 27"><div class="caption"><span>27</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem28.jpg" alt="Imagem 28"><div class="caption"><span>28</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem29.jpg" alt="Imagem 29"><div class="caption"><span>29</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem30.jpg" alt="Imagem 30"><div class="caption"><span>30</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem31.jpg" alt="Imagem 31"><div class="caption"><span>31</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem32.jpg" alt="Imagem 32"><div class="caption"><span>32</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem33.jpg" alt="Imagem 33"><div class="caption"><span>33</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem34.jpg" alt="Imagem 34"><div class="caption"><span>34</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem35.jpg" alt="Imagem 35"><div class="caption"><span>35</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem36.jpg" alt="Imagem 36"><div class="caption"><span>36</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem37.jpg" alt="Imagem 37"><div class="caption"><span>37</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem38.jpg" alt="Imagem 38"><div class="caption"><span>38</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem39.jpg" alt="Imagem 39"><div class="caption"><span>39</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem40.jpg" alt="Imagem 40"><div class="caption"><span>40</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem41.jpg" alt="Imagem 41"><div class="caption"><span>41</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem42.jpg" alt="Imagem 42"><div class="caption"><span>42</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem43.jpg" alt="Imagem 43"><div class="caption"><span>43</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem44.jpg" alt="Imagem 44"><div class="caption"><span>44</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem45.jpg" alt="Imagem 45"><div class="caption"><span>45</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem46.jpg" alt="Imagem 46"><div class="caption"><span>46</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem47.jpg" alt="Imagem 47"><div class="caption"><span>47</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem48.jpg" alt="Imagem 48"><div class="caption"><span>48</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem49.jpg" alt="Imagem 49"><div class="caption"><span>49</span> Substitua o link</div></div>
+    <div class="card"><img src="http://exemplo.com/imagem50.jpg" alt="Imagem 50"><div class="caption"><span>50</span> Substitua o link</div></div>
+</div>
 
-        const galeria = document.getElementById('galeria');
-        const totalCardsSpan = document.getElementById('totalCards');
+<div class="footer">
+    ⚡ Basta substituir os links nos <strong>src="http://..."</strong> das 50 imagens acima
+</div>
 
-        // Função para criar um card de atividade
-        function criarCard(atividade, index) {
-            const card = document.createElement('div');
-            card.className = 'card';
-            
-            // Usa a imagem da atividade se disponível, senão usa um placeholder
-            if (atividade && atividade.imagem) {
-                card.innerHTML = `
-                    <img src="${atividade.imagem}" alt="${atividade.nome}" class="card-imagem" onerror="this.src='https://via.placeholder.com/200x150/667eea/ffffff?text=Atividade+${index+1}'">
-                    <div class="card-info">
-                        <h3>${atividade.nome}</h3>
-                        <p>${atividade.categoria}</p>
-                    </div>
-                `;
-            } else {
-                // Placeholder com gradiente e número
-                const cor1 = ['#667eea', '#764ba2', '#ff9a9e', '#a8edea', '#fbc2eb'][index % 5];
-                const cor2 = ['#764ba2', '#667eea', '#fad0c4', '#fed6e3', '#a6c1ee'][index % 5];
-                card.innerHTML = `
-                    <div class="card-imagem placeholder-img" style="background: linear-gradient(135deg, ${cor1}, ${cor2})">
-                        ${index + 1}
-                    </div>
-                    <div class="card-info">
-                        <h3>Espaço ${index + 1}</h3>
-                        <p>Adicione uma atividade</p>
-                    </div>
-                `;
-            }
-            
-            // Adiciona evento de clique para mostrar informações
-            card.addEventListener('click', () => {
-                const nome = atividade ? atividade.nome : `Espaço ${index + 1}`;
-                alert(`🎯 ${nome}\nClique para editar ou adicionar uma imagem!`);
-            });
-            
-            return card;
-        }
-
-        // Gera 50 cards (20 com atividades pré-definidas e 30 placeholders)
-        for (let i = 0; i < 50; i++) {
-            if (i < atividades.length) {
-                // Usa as atividades disponíveis
-                galeria.appendChild(criarCard(atividades[i], i));
-            } else {
-                // Cria placeholders para os espaços restantes
-                const placeholderAtividade = {
-                    nome: `Espaço Criativo ${i + 1}`,
-                    categoria: "Adicione uma atividade",
-                    imagem: null
-                };
-                galeria.appendChild(criarCard(placeholderAtividade, i));
-            }
-        }
-
-        // Atualiza o contador
-        totalCardsSpan.textContent = document.querySelectorAll('.card').length;
-
-        // Função para lidar com erros de carregamento de imagens
-        function handleImageError(img) {
-            img.src = 'https://via.placeholder.com/200x150/667eea/ffffff?text=Imagem+não+encontrada';
-        }
-
-        // Adiciona evento de erro a todas as imagens
-        document.querySelectorAll('.card-imagem').forEach(img => {
-            if (img.tagName === 'IMG') {
-                img.addEventListener('error', function() {
-                    this.src = 'https://via.placeholder.com/200x150/667eea/ffffff?text=Erro+no+carregamento';
-                });
-            }
-        });
-    </script>
 </body>
 </html>
+```
