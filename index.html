@@ -1,4 +1,4 @@
-Aqui está um código HTML simples com 50 tags `<img src="http">` onde você só precisa substituir os links:
+Aqui está o código completo com uma decoração encantadora em volta do site:
 
 ```html
 <!DOCTYPE html>
@@ -6,7 +6,7 @@ Aqui está um código HTML simples com 50 tags `<img src="http">` onde você só
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Imagens - Substitua os Links</title>
+    <title>Galeria de Atividades Infantis</title>
     <style>
         * {
             margin: 0;
@@ -15,35 +15,176 @@ Aqui está um código HTML simples com 50 tags `<img src="http">` onde você só
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f0f2f5;
-            padding: 20px;
+            font-family: 'Segoe UI', 'Comic Neue', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            position: relative;
         }
 
-        h1 {
+        /* Decoração de fundo - estrelas e bolinhas */
+        body::before {
+            content: "✨⭐🌟🎈🎨🖌️📚🎭🎪";
+            position: fixed;
+            top: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 40px;
+            opacity: 0.1;
+            pointer-events: none;
+            white-space: nowrap;
+            overflow: hidden;
+            letter-spacing: 20px;
+        }
+
+        /* Bolinhas coloridas flutuantes */
+        .floating-bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        /* Container principal com decoração */
+        .site-wrapper {
+            max-width: 1500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Borda decorativa no container */
+        .decorative-border {
+            background: white;
+            border-radius: 80px 80px 60px 60px;
+            padding: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.5);
+            position: relative;
+        }
+
+        /* Cantos decorativos */
+        .decorative-border::before,
+        .decorative-border::after {
+            content: "🌈";
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .decorative-border::before {
+            top: -15px;
+            left: -15px;
+            transform: rotate(-15deg);
+        }
+
+        .decorative-border::after {
+            bottom: -15px;
+            right: -15px;
+            transform: rotate(15deg);
+        }
+
+        /* Cabeçalho decorado */
+        .header {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+            background-size: 200% 200%;
+            animation: gradientShift 5s ease infinite;
+            border-radius: 50px 50px 30px 30px;
+            padding: 30px 20px;
             text-align: center;
             margin-bottom: 30px;
-            color: #333;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
 
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #fff9e8;
+            background: rgba(0,0,0,0.2);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .decoration-icons {
+            font-size: 2rem;
+            margin-top: 15px;
+            letter-spacing: 10px;
+        }
+
+        /* Grade de imagens */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 10px;
         }
 
+        /* Card decorado */
         .card {
-            background: white;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #ffffff, #fef9f0);
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 200, 100, 0.5);
+            position: relative;
         }
 
         .card:hover {
-            transform: scale(1.02);
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-color: #FFB347;
+        }
+
+        /* Selo decorativo no canto do card */
+        .card::before {
+            content: "⭐";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 2;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .card:hover::before {
+            opacity: 1;
         }
 
         .card img {
@@ -51,107 +192,221 @@ Aqui está um código HTML simples com 50 tags `<img src="http">` onde você só
             height: 200px;
             object-fit: cover;
             display: block;
+            background: #e9ecef;
+            transition: transform 0.3s;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
         }
 
         .caption {
-            padding: 10px;
+            padding: 15px;
             text-align: center;
             font-size: 14px;
-            color: #555;
+            font-weight: bold;
+            color: #2c3e50;
             background: white;
+            border-top: 3px dashed #FFB347;
+            position: relative;
         }
 
         .caption span {
-            background: #e9ecef;
-            padding: 4px 8px;
-            border-radius: 20px;
-            font-size: 12px;
+            background: linear-gradient(135deg, #FF6B6B, #FFB347);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 11px;
+            margin-right: 8px;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        /* Rodapé decorado */
         .footer {
-            text-align: center;
             margin-top: 40px;
-            padding: 20px;
-            color: #666;
+            padding: 25px;
+            background: linear-gradient(135deg, #2C3E50, #3498DB);
+            border-radius: 40px 40px 30px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: "🎨 🖌️ ✏️ 📚 🎭 🎪 🎈 🧸";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 30px;
+            opacity: 0.1;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .footer p {
+            position: relative;
+            z-index: 1;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        .footer .instruction {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #FF6B6B, #FFB347);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .decorative-border {
+                padding: 15px;
+                border-radius: 40px;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
             .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 10px;
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+                gap: 15px;
             }
             .card img {
                 height: 150px;
+            }
+            .caption {
+                font-size: 11px;
+                padding: 10px;
+            }
+            .decoration-icons {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-<h1>📸 Galeria de Imagens</h1>
+<!-- Bolinhas flutuantes decorativas -->
+<div class="floating-bubbles" id="bubbles"></div>
 
-<div class="gallery">
-    <!-- =================================================== -->
-    <!-- COLOQUE SEUS LINKS NOS src="AQUI" ABAIXO -->
-    <!-- Basta substituir os URLs http://exemplo.com/imagem.jpg -->
-    <!-- =================================================== -->
+<div class="site-wrapper">
+    <div class="decorative-border">
+        <div class="header">
+            <h1>🎨 Atividades Infantis 🎨</h1>
+            <p>50 ideias para desenvolver a criatividade e diversão</p>
+            <div class="decoration-icons">
+                🎭 🖌️ 📚 🎪 🧸 🎈 🎨 🎵
+            </div>
+        </div>
 
-    <div class="card"><img src="https://i.pinimg.com/736x/a0/c3/33/a0c333a8d92028d95110f68c54a10c97.jpg" alt="Imagem 1"><div class="caption"><span>01</span> atividades matematicas para colorir</div></div>
-    <div class="card"><img src="https://educador.com.br/wp-content/uploads/2023/04/20-ATIVIDADES-DE-ARTES-1-ANO-FUNDAMENTAL-EDUCADOR.COM_.BR_-724x1024.png" alt="Imagem 2"><div class="caption"><span>02</span> artes</div></div>
-    <div class="card"><img src="https://i.pinimg.com/originals/33/f8/58/33f8587534316baa2514ebad0e7fe026.png" alt="Imagem 3"><div class="caption"><span>03</span> ciências</div></div>
-    <div class="card"><img src="https://mundoindica.com/wp-content/uploads/2023/06/atividade-de-geografia-para-educacao-infantil.jpg" alt="Imagem 4"><div class="caption"><span>04</span> geografia</div></div>
-    <div class="card"><img src="https://i.pinimg.com/564x/98/64/7e/98647e295649bf76bd77ed5db4610f00.jpg" alt="Imagem 5"><div class="caption"><span>05</span> português</div></div>
-    <div class="card"><img src="https://i.pinimg.com/200x150/9c/60/37/9c603731abeee6bd9f31e2bbe2a30d53.jpg" alt="Imagem 6"><div class="caption"><span>06</span> origame</div></div>
-    <div class="card"><img src="https://minhastarefinhas.wordpress.com/wp-content/uploads/2014/07/atividades-dia-das-criancas.png?w=500" alt="Imagem 7"><div class="caption"><span>07</span> pintura</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem8.jpg" alt="Imagem 8"><div class="caption"><span>08</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem9.jpg" alt="Imagem 9"><div class="caption"><span>09</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem10.jpg" alt="Imagem 10"><div class="caption"><span>10</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem11.jpg" alt="Imagem 11"><div class="caption"><span>11</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem12.jpg" alt="Imagem 12"><div class="caption"><span>12</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem13.jpg" alt="Imagem 13"><div class="caption"><span>13</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem14.jpg" alt="Imagem 14"><div class="caption"><span>14</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem15.jpg" alt="Imagem 15"><div class="caption"><span>15</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem16.jpg" alt="Imagem 16"><div class="caption"><span>16</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem17.jpg" alt="Imagem 17"><div class="caption"><span>17</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem18.jpg" alt="Imagem 18"><div class="caption"><span>18</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem19.jpg" alt="Imagem 19"><div class="caption"><span>19</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem20.jpg" alt="Imagem 20"><div class="caption"><span>20</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem21.jpg" alt="Imagem 21"><div class="caption"><span>21</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem22.jpg" alt="Imagem 22"><div class="caption"><span>22</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem23.jpg" alt="Imagem 23"><div class="caption"><span>23</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem24.jpg" alt="Imagem 24"><div class="caption"><span>24</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem25.jpg" alt="Imagem 25"><div class="caption"><span>25</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem26.jpg" alt="Imagem 26"><div class="caption"><span>26</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem27.jpg" alt="Imagem 27"><div class="caption"><span>27</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem28.jpg" alt="Imagem 28"><div class="caption"><span>28</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem29.jpg" alt="Imagem 29"><div class="caption"><span>29</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem30.jpg" alt="Imagem 30"><div class="caption"><span>30</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem31.jpg" alt="Imagem 31"><div class="caption"><span>31</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem32.jpg" alt="Imagem 32"><div class="caption"><span>32</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem33.jpg" alt="Imagem 33"><div class="caption"><span>33</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem34.jpg" alt="Imagem 34"><div class="caption"><span>34</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem35.jpg" alt="Imagem 35"><div class="caption"><span>35</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem36.jpg" alt="Imagem 36"><div class="caption"><span>36</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem37.jpg" alt="Imagem 37"><div class="caption"><span>37</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem38.jpg" alt="Imagem 38"><div class="caption"><span>38</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem39.jpg" alt="Imagem 39"><div class="caption"><span>39</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem40.jpg" alt="Imagem 40"><div class="caption"><span>40</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem41.jpg" alt="Imagem 41"><div class="caption"><span>41</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem42.jpg" alt="Imagem 42"><div class="caption"><span>42</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem43.jpg" alt="Imagem 43"><div class="caption"><span>43</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem44.jpg" alt="Imagem 44"><div class="caption"><span>44</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem45.jpg" alt="Imagem 45"><div class="caption"><span>45</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem46.jpg" alt="Imagem 46"><div class="caption"><span>46</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem47.jpg" alt="Imagem 47"><div class="caption"><span>47</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem48.jpg" alt="Imagem 48"><div class="caption"><span>48</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem49.jpg" alt="Imagem 49"><div class="caption"><span>49</span> Substitua o link</div></div>
-    <div class="card"><img src="http://exemplo.com/imagem50.jpg" alt="Imagem 50"><div class="caption"><span>50</span> Substitua o link</div></div>
+        <div class="gallery">
+            <!-- =================================================== -->
+            <!-- SUBSTITUA APENAS OS LINKS NOS src="AQUI" -->
+            <!-- Os nomes das atividades já estão prontos! -->
+            <!-- =================================================== -->
+
+            <div class="card"><img src="http://exemplo.com/fantoches.jpg" alt="Fantoches"><div class="caption"><span>01</span> 🎭 Fantoches</div></div>
+            <div class="card"><img src="http://exemplo.com/pintura.jpg" alt="Pintura"><div class="caption"><span>02</span> 🎨 Pintura com guache</div></div>
+            <div class="card"><img src="http://exemplo.com/experiencia.jpg" alt="Experiência"><div class="caption"><span>03</span> 🔬 Experiência: vulcão</div></div>
+            <div class="card"><img src="http://exemplo.com/historias.jpg" alt="Histórias"><div class="caption"><span>04</span> 📖 Contação de histórias</div></div>
+            <div class="card"><img src="http://exemplo.com/massinha.jpg" alt="Massinha"><div class="caption"><span>05</span> 🧸 Massinha de modelar</div></div>
+            <div class="card"><img src="http://exemplo.com/reciclagem.jpg" alt="Reciclagem"><div class="caption"><span>06</span> ♻️ Arte com reciclagem</div></div>
+            <div class="card"><img src="http://exemplo.com/colagem.jpg" alt="Colagem"><div class="caption"><span>07</span> ✂️ Colagem criativa</div></div>
+            <div class="card"><img src="http://exemplo.com/teatro.jpg" alt="Teatro"><div class="caption"><span>08</span> 🎪 Teatro de sombras</div></div>
+            <div class="card"><img src="http://exemplo.com/musica.jpg" alt="Música"><div class="caption"><span>09</span> 🎵 Música com instrumentos caseiros</div></div>
+            <div class="card"><img src="http://exemplo.com/desenho.jpg" alt="Desenho"><div class="caption"><span>10</span> ✏️ Desenho livre</div></div>
+            <div class="card"><img src="http://exemplo.com/jardim.jpg" alt="Jardim"><div class="caption"><span>11</span> 🌱 Plantar uma sementinha</div></div>
+            <div class="card"><img src="http://exemplo.com/caca.jpg" alt="Caça ao tesouro"><div class="caption"><span>12</span> 🗺️ Caça ao tesouro</div></div>
+            <div class="card"><img src="http://exemplo.com/danca.jpg" alt="Dança"><div class="caption"><span>13</span> 💃 Dança das cadeiras</div></div>
+            <div class="card"><img src="http://exemplo.com/blocos.jpg" alt="Blocos"><div class="caption"><span>14</span> 🧱 Construção com blocos</div></div>
+            <div class="card"><img src="http://exemplo.com/bolhas.jpg" alt="Bolhas"><div class="caption"><span>15</span> 🫧 Bolhas de sabão gigantes</div></div>
+            <div class="card"><img src="http://exemplo.com/amarelinha.jpg" alt="Amarelinha"><div class="caption"><span>16</span> 🎯 Amarelinha</div></div>
+            <div class="card"><img src="http://exemplo.com/castelo.jpg" alt="Castelo"><div class="caption"><span>17</span> 🏰 Castelo de papelão</div></div>
+            <div class="card"><img src="http://exemplo.com/origami.jpg" alt="Origami"><div class="caption"><span>18</span> 🦢 Origami divertido</div></div>
+            <div class="card"><img src="http://exemplo.com/pintura-pedras.jpg" alt="Pintura em pedras"><div class="caption"><span>19</span> 🪨 Pintura em pedras</div></div>
+            <div class="card"><img src="http://exemplo.com/memoria.jpg" alt="Memória"><div class="caption"><span>20</span> 🃏 Jogo da memória</div></div>
+            <div class="card"><img src="http://exemplo.com/equilibrio.jpg" alt="Equilíbrio"><div class="caption"><span>21</span> ⚖️ Jogo de equilíbrio</div></div>
+            <div class="card"><img src="http://exemplo.com/boliche.jpg" alt="Boliche"><div class="caption"><span>22</span> 🎳 Boliche ecológico</div></div>
+            <div class="card"><img src="http://exemplo.com/slime.jpg" alt="Slime"><div class="caption"><span>23</span> 🧪 Slime caseiro</div></div>
+            <div class="card"><img src="http://exemplo.com/circuito.jpg" alt="Circuito"><div class="caption"><span>24</span> 🏃 Circuito de obstáculos</div></div>
+            <div class="card"><img src="http://exemplo.com/fantasia.jpg" alt="Fantasia"><div class="caption"><span>25</span> 👗 Fantasia e caracterização</div></div>
+            <div class="card"><img src="http://exemplo.com/pegapega.jpg" alt="Pega-pega"><div class="caption"><span>26</span> 🏃‍♂️ Pega-pega colorido</div></div>
+            <div class="card"><img src="http://exemplo.com/bambole.jpg" alt="Bambolê"><div class="caption"><span>27</span> 🔄 Bambolê divertido</div></div>
+            <div class="card"><img src="http://exemplo.com/pescaria.jpg" alt="Pescaria"><div class="caption"><span>28</span> 🎣 Pescaria magnética</div></div>
+            <div class="card"><img src="http://exemplo.com/sombra.jpg" alt="Sombras"><div class="caption"><span>29</span> 🌓 Jogo das sombras</div></div>
+            <div class="card"><img src="http://exemplo.com/sensorial.jpg" alt="Sensorial"><div class="caption"><span>30</span> 👐 Caixa sensorial</div></div>
+            <div class="card"><img src="http://exemplo.com/tangram.jpg" alt="Tangram"><div class="caption"><span>31</span> 🔺 Tangram e formas</div></div>
+            <div class="card"><img src="http://exemplo.com/mimica.jpg" alt="Mímica"><div class="caption"><span>32</span> 🎭 Mímica das emoções</div></div>
+            <div class="card"><img src="http://exemplo.com/biscoitos.jpg" alt="Biscoitos"><div class="caption"><span>33</span> 🍪 Cozinhar juntos: biscoitos</div></div>
+            <div class="card"><img src="http://exemplo.com/baloes.jpg" alt="Balões"><div class="caption"><span>34</span> 🎈 Pintura com balões</div></div>
+            <div class="card"><img src="http://exemplo.com/terrario.jpg" alt="Terrário"><div class="caption"><span>35</span> 🌿 Construir um terrário</div></div>
+            <div class="card"><img src="http://exemplo.com/varetas.jpg" alt="Varetas"><div class="caption"><span>36</span> 🥢 Pega varetas coloridas</div></div>
+            <div class="card"><img src="http://exemplo.com/estatuas.jpg" alt="Estátuas"><div class="caption"><span>37</span> 🗿 Dança das estátuas</div></div>
+            <div class="card"><img src="http://exemplo.com/cores.jpg" alt="Cores"><div class="caption"><span>38</span> 🌈 Caça às cores na natureza</div></div>
+            <div class="card"><img src="http://exemplo.com/trenzinho.jpg" alt="Trenzinho"><div class="caption"><span>39</span> 🚂 Trenzinho da reciclagem</div></div>
+            <div class="card"><img src="http://exemplo.com/arvore.jpg" alt="Árvore"><div class="caption"><span>40</span> 🌳 Árvore genealógica divertida</div></div>
+            <div class="card"><img src="http://exemplo.com/labirinto.jpg" alt="Labirinto"><div class="caption"><span>41</span> 🌀 Labirinto de fita crepe</div></div>
+            <div class="card"><img src="http://exemplo.com/escultura.jpg" alt="Escultura"><div class="caption"><span>42</span> 🍎 Escultura de frutas</div></div>
+            <div class="card"><img src="http://exemplo.com/cacapalavras.jpg" alt="Caça-palavras"><div class="caption"><span>43</span> 🔍 Caça-palavras ilustrado</div></div>
+            <div class="card"><img src="http://exemplo.com/rosto.jpg" alt="Pintura no rosto"><div class="caption"><span>44</span> 🎭 Pintura no rosto</div></div>
+            <div class="card"><img src="http://exemplo.com/fantoches-meia.jpg" alt="Fantoches de meia"><div class="caption"><span>45</span> 🧦 Fantoches de meia</div></div>
+            <div class="card"><img src="http://exemplo.com/carrinhos.jpg" alt="Pintura com carrinhos"><div class="caption"><span>46</span> 🚗 Pintura com carrinhos</div></div>
+            <div class="card"><img src="http://exemplo.com/gelo.jpg" alt="Pintura com gelo"><div class="caption"><span>47</span> ❄️ Pintura com gelo</div></div>
+            <div class="card"><img src="http://exemplo.com/areia.jpg" alt="Areia mágica"><div class="caption"><span>48</span> ✨ Caixa de areia mágica</div></div>
+            <div class="card"><img src="http://exemplo.com/saco.jpg" alt="Corrida do saco"><div class="caption"><span>49</span> 🏆 Corrida do saco</div></div>
+            <div class="card"><img src="http://exemplo.com/massagem.jpg" alt="Massagem"><div class="caption"><span>50</span> 💆 Massagem de histórias</div></div>
+        </div>
+
+        <div class="footer">
+            <p>✨ 50 atividades infantis para inspirar momentos mágicos ✨</p>
+            <div class="instruction">
+                ⚡ <strong>Instruções:</strong> Substitua apenas os links nos <strong>src="http://..."</strong> pelas suas imagens
+            </div>
+            <p style="margin-top: 15px; font-size: 12px;">🎨 Divirta-se explorando cada atividade! 🎨</p>
+        </div>
+    </div>
 </div>
 
-<div class="footer">
-    ⚡ Basta substituir os links nos <strong>src="http://..."</strong> das 50 imagens acima
-</div>
+<script>
+    // Criar bolinhas flutuantes decorativas
+    function createBubbles() {
+        const bubblesContainer = document.getElementById('bubbles');
+        const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#F7DC6F'];
+        
+        for (let i = 0; i < 60; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 60 + 10;
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = Math.random() * 100 + '%';
+            bubble.style.top = Math.random() * 100 + '%';
+            bubble.style.animationDelay = Math.random() * 8 + 's';
+            bubble.style.animationDuration = (Math.random() * 10 + 5) + 's';
+            bubble.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]}40, ${colors[Math.floor(Math.random() * colors.length)]}10)`;
+            bubblesContainer.appendChild(bubble);
+        }
+    }
+    
+    createBubbles();
+</script>
 
 </body>
 </html>
